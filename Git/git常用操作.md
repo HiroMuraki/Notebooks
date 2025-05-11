@@ -8,9 +8,10 @@ git config --global user.email "youremail@example.com"
 关联远程库
 
 ```bash
-#
+# 关联远程库
 git remote add origin "https://github.com/HiroMuraki/g1_urp"
-#
+
+# 设立上游分支
 git branch --set-upstream-to=origin/main main
 
 # 处理分叉（Divergent Branches）
@@ -23,4 +24,7 @@ git pull --rebase
 ## 方式3：只允许快进合并（如果存在分叉则拒绝）
 git config pull.ff only
 git pull --ff-only
+
+# 推送
+git push -u origin main
 ```
