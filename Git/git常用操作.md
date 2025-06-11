@@ -30,4 +30,7 @@ git pull origin main --allow-unrelated-histories
 
 # 推送
 git push
+
+# 打包项目
+git archive --format=zip --output=project.zip HEAD
 ```
