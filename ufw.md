@@ -6,5 +6,5 @@ sudo ufw enable
 sudo ufw disable
 
 # 添加
-sudo ufw allow <port>/<protocol>
+sudo ufw allow <port>/<protocol> [comment 'xxx']
 ```

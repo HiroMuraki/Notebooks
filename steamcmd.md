@@ -16,8 +16,8 @@ sudo apt install steamcmd
 
 ### CS1.6/CSCZ
 
-若遇到/home/$user/.steam/sdk32/steamclient.so 加载错误，使用如下命令：
+若遇到/home/$USER/.steam/sdk32/steamclient.so 加载错误，使用如下命令：
 
 ```bash
-ln -s /home/$user/.steam/steam/steamcmd/linux32/steamclient.so /home/$user/.steam/sdk32/
+ln -s /home/$USER/.steam/steam/steamcmd/linux32/steamclient.so /home/$USER/.steam/sdk32/
 ```
