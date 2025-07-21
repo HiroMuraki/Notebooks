@@ -57,5 +57,5 @@ PubkeyAuthentication yes
 **重启 SSH 服务**
 
 ```bash
-sudo systemctl restart sshd
+sudo systemctl restart ssh
 ```
