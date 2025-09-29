@@ -56,5 +56,5 @@ tar zxf dotnet-sdk-*-linux-*.tar.gz -C "$HOME/local/dotnet/9"
 
 ```bash
 DOTNET_ROOT=$HOME/local/dotnet/9
-PATH=$HOME/dotnet:$PATH
+PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH
 ```

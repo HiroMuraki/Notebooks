@@ -26,7 +26,7 @@ sh -c "$(wget -O- https://install.ohmyz.sh/)"
 
 ## 3.安装 powerlevel10k
 
-**(1) 安装 Nerd Font 字体（终端侧）**
+**(1) 安装 Nerd Font 字体（终端侧，可选，如果需要使用复杂样式）**
 
 https://github.com/ryanoasis/nerd-fonts
 https://github.com/romkatv/powerlevel10k

@@ -43,11 +43,11 @@ ssh my-server
 
 ### 2.服务器端
 
-**禁用密码验证，仅允许密钥验证**
+**禁用口令验证，仅允许密钥验证**
 编辑`/etc/ssh/sshd_config`，找到并修改以下参数
 
 ```ini
-# 禁用密码认证
+# 禁用口令认证
 PasswordAuthentication no
 
 # 使用公钥认证

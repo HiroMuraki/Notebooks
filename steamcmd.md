@@ -1,3 +1,5 @@
+## 1.安装
+
 ```bash
 sudo add-apt-repository multiverse
 
@@ -8,7 +10,7 @@ sudo apt update
 sudo apt install steamcmd
 ```
 
-## 游戏建服注意事项
+## 2.游戏建服注意事项
 
 ### L4D2
 
