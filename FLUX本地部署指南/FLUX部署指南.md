@@ -359,6 +359,7 @@ pip install accelerate -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install diffusers -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install protobuf -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install sentencepiece -i https://pypi.mirrors.ustc.edu.cn/simple
+pip install peft -i https://pypi.mirrors.ustc.edu.cn/simple
 ```
 
 #### 3.3.2.使用 FLUX
