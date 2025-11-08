@@ -6,7 +6,12 @@
 
 ```bash
 sudo apt update
-sudo apt install -y pkg-config cmake libopenblas-dev libatlas-base-dev gfortran
+sudo apt install -y build-essential
+sudo apt install -y cmake
+sudo apt install -y pkg-config
+sudo apt install -y gfortran
+sudo apt install -y libopenblas-dev
+sudo apt install -y libatlas-base-dev
 ```
 
 **安装 Miniconda**
@@ -34,10 +39,10 @@ git clone -b sd3 https://github.com/kohya-ss/sd-scripts
 
 ```bash
 cd sd-scripts
-pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple -r requirements.txt
+pip install -r requirements.txt
 
 cd ..
-pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple -r requirements.txt
+pip install -r requirements.txt
 
 pip install torch torchvision
 ```
