@@ -18,14 +18,15 @@ sudo apt install -y libatlas-base-dev
 
 [Miniconda 安装指南](/计算机科学/miniconda.md)
 
-## 2.拉取 FluxGym 并安装依赖
-
 **创建 Conda 虚拟环境**
 
 ```bash
+source ~/miniconda/bin/activate
 conda create -n flux_gym python=3.11 -y
 conda activate flux_gym
 ```
+
+## 2.拉取 FluxGym 并安装依赖
 
 **拉取代码库**
 

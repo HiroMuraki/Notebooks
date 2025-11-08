@@ -350,10 +350,11 @@ python main.py
 
 #### 3.3.1.安装依赖包
 
-执行以下命令安装依赖包（安装命令添加了-i 参数以使用电子科技大学的镜像源加速下载）
+执行以下命令安装依赖包（安装命令添加了-i 参数以使用中国科学技术大学的镜像源加速下载）
 
 ```bash
-pip install torch torchvision -i https://pypi.mirrors.ustc.edu.cn/simple
+pip install torch -i https://pypi.mirrors.ustc.edu.cn/simple
+pip install torchvision -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install transformers -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install accelerate -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install diffusers -i https://pypi.mirrors.ustc.edu.cn/simple
