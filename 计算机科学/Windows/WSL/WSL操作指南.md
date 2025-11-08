@@ -1,6 +1,13 @@
 ## 进阶操作
 
 **压缩 WSL 磁盘**
+
+确保完全关闭 WSL
+
+```bash
+wsl --shutdown
+```
+
 运行 diskpart
 
 ```bash
