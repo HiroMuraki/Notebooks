@@ -1,12 +1,13 @@
-初始化
+## 初始化
 
 ```bash
 git config --global user.name "username"
 git config --global user.email "youremail@example.com"
 ```
 
-关联远程库
-场景：本地已有储存库，关联到新建的非空远程存储库
+## 关联远程库
+
+### 场景 1：本地已有储存库，关联到新建的非空远程存储库
 
 ```bash
 # 关联远程库
@@ -30,7 +31,11 @@ git pull origin main --allow-unrelated-histories
 
 # 推送
 git push
+```
 
+## 其他操作
+
+```bash
 # 打包项目
 git archive --format=zip --output=project.zip HEAD
 ```

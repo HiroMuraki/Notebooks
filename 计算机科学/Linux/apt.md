@@ -1,7 +1,7 @@
-## 配置 apt 源
+## 配置 apt 源为中科大源
 
 ```bash
-sudo nano /etc/apt/sources.list.d/custom.list
+sudo vim /etc/apt/sources.list.d/custom.list
 ```
 
 填入以下内容

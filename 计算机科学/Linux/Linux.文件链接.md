@@ -3,13 +3,13 @@
 **软连接**
 
 ```bash
-ln -s [target_path] [link_path]
+ln -s <target_path> <link_path>
 ```
 
 **硬链接**
 
 ```bash
-ls -s [target_path] [link_path]
+ls -s <target_path> <link_path>
 ```
 
 ## 查看链接信息
@@ -19,8 +19,8 @@ ls -s [target_path] [link_path]
 ls -i
 
 # 查看实际指向
-readlink [link_path]
+readlink <link_path>
 
 # 查看链接计数
-stat [file_name]
+stat <file_name>
 ```

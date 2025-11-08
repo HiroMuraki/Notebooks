@@ -1,11 +1,12 @@
 ## 用户管理
 
 **相关文件**
-|路径 |说明 |
-|-|-|
-|/etc/group |存储组信息 |
-|/etc/gshadow |存储组安全信息 |
-|/etc/login.defs|组创建的默认设置|
+
+| 路径            | 说明             |
+| --------------- | ---------------- |
+| /etc/group      | 存储组信息       |
+| /etc/gshadow    | 存储组安全信息   |
+| /etc/login.defs | 组创建的默认设置 |
 
 **用户**
 
@@ -57,7 +58,7 @@ root         ALL=(ALL:ALL) ALL
 <username>   ALL=(ALL:ALL) ALL # 添加此行
 ```
 
-**为组添加 sudo 权限**
+**为指定组添加 sudo 权限**
 root 用户打开`/etc/sudoers`，找到以下位置写入
 
 ```bash

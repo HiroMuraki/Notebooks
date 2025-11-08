@@ -31,7 +31,7 @@ level = "info"
 maxDays = 7
 ```
 
-2.放行端口 `7000/TCP` 与 `7500/UDP`
+2.放行端口 `7000/TCP` 与 `7500/TCP`
 
 3.运行 frps
 
