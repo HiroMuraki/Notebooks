@@ -12,7 +12,7 @@ conda create -n flux_diffusers python=3.13 -y
 conda activate flux_diffusers
 ```
 
-## 2.安装 diffusers
+## 2.安装 diffusers 与相关依赖
 
 ```bash
 pip install torch
