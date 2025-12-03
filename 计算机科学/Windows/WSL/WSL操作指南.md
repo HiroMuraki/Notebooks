@@ -12,8 +12,7 @@ rm -rf /tmp/*
 填充空闲空间
 
 ```bash
-sudo dd if=/dev/zero of=/zero.fill bs=1M
-sudo rm -f /zero.fill
+sudo dd if=/dev/zero of=/zero.fill bs=1M && sudo rm -f /zero.fill
 ```
 
 完全关闭 WSL
@@ -35,7 +34,7 @@ SELECT VDISK FILE="path/to/wsl/vdisk/ext4.vhdx"
 
 COMPACT VDISK
 
-DEATCH VDISK
+DETACH VDISK
 
 EXIT
 ```
