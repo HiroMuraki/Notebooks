@@ -1,5 +1,5 @@
 [Unit]
-Description=MongoDb Databse Server
+Description=MongoDb Database Server
 After=network.target
 
 [Service]
