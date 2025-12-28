@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "db5a779a32f0c4d6",
+        "id": "92b218c58d920bd2",
         "type": "tabs",
         "children": [
           {
-            "id": "9c1d2f088fe3db56",
+            "id": "6e7cf1908aa3c208",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "计算机科学/Windows/WSL/WSL操作指南.md",
+                "file": "计算机科学/Steamcmd/安装指南.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "WSL操作指南"
+              "title": "安装指南"
             }
           }
         ]
@@ -180,39 +180,44 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "9c1d2f088fe3db56",
+  "active": "6e7cf1908aa3c208",
   "lastOpenFiles": [
-    "计算机科学/Git/使用指南.md",
+    "计算机科学/Steamcmd/使用指南.md",
+    "计算机科学/Steamcmd/安装指南.md",
+    "计算机科学/Steamcmd",
+    "计算机科学/Linux/ufw.md",
     "计算机科学/Linux/ssh.md",
-    "计算机科学/Zsh/安装指南.md",
-    "计算机科学/Windows/netsh/常用操作.md",
-    "计算机科学/Zsh",
-    "未命名 1",
-    "未命名",
-    "计算机科学/WireGuard/常用操作.md",
-    "未命名.base",
-    "未命名.canvas",
-    "计算机科学/FLUX1/FLUX.1-Dev+Diffusers部署指南.md",
-    "计算机科学/FLUX1/FLUX.1-Dev+ComfyUI部署指南.md",
-    "计算机科学/Windows/WSL/WSL操作指南.md",
+    "计算机科学/Linux/powershell.md",
+    "计算机科学/Linux/ollama.md",
+    "计算机科学/Linux/nginx.md",
+    "计算机科学/FRP/使用指南.md",
+    "计算机科学/FRP/安装指南.md",
+    "计算机科学/Linux/Tmux/使用指南.md",
+    "计算机科学/FRP",
+    "计算机科学/Linux/Linux.文件链接.md",
+    "计算机科学/Linux/apt.md",
+    "计算机科学/Linux/Tmux/安装指南.md",
+    "计算机科学/Linux/Tmux",
+    "计算机科学/Linux/README.md",
+    "计算机科学/Linux/MongoDb.md",
+    "计算机科学/Linux/Linux.用户管理.md",
+    "计算机科学/Linux/DotNet/安装指南.md",
+    "计算机科学/Linux/DotNet",
+    "计算机科学/Linux/Systemd/使用操作.md",
+    "计算机科学/Git/使用指南.md",
+    "计算机科学/Anaconda/miniconda.md",
+    "计算机科学/Termux/使用指南.md",
     "计算机科学/Python/UV/使用指南.md",
     "计算机科学/Python/UV/安装指南.md",
     "计算机科学/Python/pip/常用操作.md",
-    "未命名.md",
-    "计算机科学/Python/pip",
-    "计算机科学/Linux/frp.md",
-    "计算机科学/Linux/dotnet.md",
-    "计算机科学/Linux/ollama.md",
-    "计算机科学/WireGuard/相关概念.md",
-    "计算机科学/WireGuard/使用WireGuard建立虚拟局域网.md",
-    "计算机科学/NodeJs/常用操作.md",
-    "计算机科学/NodeJs/安装.md",
-    "计算机科学/MySql/安装指南.md",
-    "计算机科学/Linux/powershell.md",
-    "计算机科学/Linux/nginx.md",
-    "计算机科学/Linux/MongoDb.md",
-    "计算机科学/Docker/Docker安装指南.md",
-    "计算机科学/Anaconda/miniconda.md",
-    "计算机科学/SinglePages/### __使用 SSH + 公钥认证远程连接（免密码登录）.md"
+    "计算机科学/Docker/操作指南.md",
+    "计算机科学/Docker/安装指南.md",
+    "计算机科学/Termux",
+    "未命名",
+    "计算机科学/Zsh",
+    "未命名 1",
+    "未命名.base",
+    "未命名.canvas",
+    "计算机科学/Python/pip"
   ]
 }

@@ -23,7 +23,7 @@
 
 由于安装界面是纯图形安装，根据说明安装即可（基本上一路下一步就行），具体过程不再赘述。但关于安装选项请使用如下设置
 
-![img](./assets/virtualbox_installation_configuration.png)
+![img](virtualbox_installation_configuration.png)
 
 **(2) 下载 Ubuntu 24.04 Server 镜像**
 
@@ -37,41 +37,41 @@
 
 运行 VirtualBox，出现以下界面
 
-![img](./assets/virtualbox_first_launch.png)
+![img](virtualbox_first_launch.png)
 
 右下角的 Please choose Experience Model 选择 `Expert Mode`，然后点击顶部的蓝色 `新建` 按钮，按下图填写各字段
 
 注：`VM Folder` 的路径请根据自身实际情况修改，这个目录是存储虚拟机文件的目录，空间占用通常能打到数十 GB 甚至数百 GB。
 
-![img](./assets/virtualbox_new_machine.png)
+![img](virtualbox_new_machine.png)
 
 点击 `完成`，在主菜单再点击顶部的绿色 `启动` 按钮
 
-![img](./assets/virtualbox_launch_machine.png)
+![img](virtualbox_launch_machine.png)
 
 弹出以下界面
 
-![img](./assets/virtualbox_add_cd.png)
+![img](virtualbox_add_cd.png)
 
 点开 `光驱` 字段输入框右侧的箭头，选 `其他`，会弹出一个文件选择窗口，选择之前下载的 `ubuntu-24.04.3-live-server-amd64.iso` 文件，然后选择 `尝试挂载并启动`，之后会进入 Ubuntu 安装界面。如下图
 
-![img](./assets/ubuntu_installation_entry.png)
+![img](ubuntu_installation_entry.png)
 
 注：如果你的鼠标无法从虚拟机中移出，请按一下右 Ctrl 键
 
 选择 Try or Install Ubuntu Server，后续的安装就是标准的 Ubuntu Server 安装，实际操作基本只需一直选 Done，具体过程不再阐述。下图是部分设置项的示例
 
-![img](./assets/ubuntu_installation_profile_configuration.png)
+![img](ubuntu_installation_profile_configuration.png)
 
 （这里设置的用户名为 user，密码为 123456）
 
-![img](./assets/ubuntu_installation_ssh_configuration.png)
-![img](./assets/ubuntu_installation_featured_server_snaps.png)
-![img](./assets/ubuntu_installation_done.png)
+![img](ubuntu_installation_ssh_configuration.png)
+![img](ubuntu_installation_featured_server_snaps.png)
+![img](ubuntu_installation_done.png)
 
 等待安装完成后第一次重启可能弹出以下界面
 
-![img](./assets/ubuntu_installation_done_reboot.png)
+![img](ubuntu_installation_done_reboot.png)
 
 此处直接按回车键等待 Reboot 就行，VirtualBox 会自动卸载虚拟光驱。
 
@@ -79,11 +79,11 @@
 
 进入系统后会显示以下界面
 
-![img](./assets/ubuntu_main_login.png)
+![img](ubuntu_main_login.png)
 
 输入在先前安装中设置中的用户名和密码即可登入系统，成功后如下
 
-![img](./assets/ubuntu_main.png)
+![img](ubuntu_main.png)
 
 至此，Ubuntu Server 安装完成。
 
@@ -93,7 +93,7 @@
 
 暂时关闭虚拟机中的 Ubuntu Server 系统，然后在 VirtualBox 中按以下操作创建快照
 
-![img](./assets/virtualbox_create_init_snapshot.png)
+![img](virtualbox_create_init_snapshot.png)
 
 创建后重新启动 Ubuntu Server 系统即可。
 
