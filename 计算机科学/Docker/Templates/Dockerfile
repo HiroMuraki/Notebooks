@@ -19,8 +19,10 @@ COPY . .
 
 # 设置环境变量（如 Flask 配置、数据库连接等）
 ENV FLASK_APP=app.py
-ENV FLASK_ENV=production  # 或 development
-ENV GUNICORN_WORKERS=4    # 根据 CPU 核心数调整
+# 或 development
+ENV FLASK_ENV=production  
+# 根据 CPU 核心数调整
+ENV GUNICORN_WORKERS=4    
 
 # 暴露端口（与 Gunicorn 监听的端口一致）
 EXPOSE 8000
@@ -28,8 +30,13 @@ EXPOSE 8000
 # 启动命令（直接运行 Gunicorn，替代 systemctl）
 CMD ["gunicorn", \
     "--bind", "0.0.0.0:8000", \
-    "--workers", "${GUNICORN_WORKERS:-4}", \  # 默认 4 个 worker
-    "--timeout", "120", \                    # 超时时间（秒）
-    "--access-logfile", "-", \               # 访问日志输出到 stdout
-    "--error-logfile", "-", \                # 错误日志输出到 stderr
-    "app:app"]                               # 模块名:应用实例
+    # 默认 4 个 worker
+    "--workers", "${GUNICORN_WORKERS:-4}", \ 
+    # 超时时间（秒）
+    "--timeout", "120", \                    
+    # 访问日志输出到 stdout
+    "--access-logfile", "-", \               
+    # 错误日志输出到 stderr
+    "--error-logfile", "-", \                
+    # 模块名:应用实例
+    "app:app"]                               
