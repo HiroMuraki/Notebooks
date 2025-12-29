@@ -19,6 +19,7 @@
 ### 2.1.服务器端
 
 **（1）安装并配置 WireGuard**
+
 使用如下命令在 Ubuntu 中安装 WireGuard
 
 ```bash
@@ -35,7 +36,7 @@ cd ~/wireguard
 使用如下命令生成服务器端的公钥与私钥
 
 ```bash
-wg genkey | tee server_private.key | wg pubkey > server_public.key
+wg genkey | tee server.key | wg pubkey > server.pubkey
 ```
 
 接着创建一个名为 wg0.conf 的文件以作为 WireGuard 的配置文件。编辑创建的 wg0.conf，填入以下内容：
@@ -68,6 +69,7 @@ PostDown = iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 > ```
 
 **（2）打开 IP 转发**
+
 使用如下命令打开 IP 转发（临时）
 
 ```bash
@@ -82,6 +84,7 @@ sudo sysctl -p
 ```
 
 **（3）防火墙放行（UDP）**
+
 取决于你的 ListenPort，这里用的是 51820，则需要在服务器放行端口 51820/udp
 
 ```bash
@@ -124,6 +127,7 @@ PersistentKeepalive = 25
 ![](./asserts/示例图-配置填写完毕.png)
 
 **（2）放行防火墙**
+
 使用管理员身份执行以下 powershell 命令
 
 ```powershell
@@ -204,7 +208,9 @@ sudo wg set wg0 peer [CLIENT/public.key] allowed-ips [CLIENT/lan.ip/32]
 | [CLIENT/lan.ip/32]  | 客户端虚拟局域网 ip |
 
 例如对于如下客户端配置
+
 ![](./asserts/示例图-配置填写完毕.png)
+
 应当运行
 
 ```bash
