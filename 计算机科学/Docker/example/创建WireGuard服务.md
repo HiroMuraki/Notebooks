@@ -1,6 +1,4 @@
-## 使用 Docker 运行 WireGuard
-
-**创建工作目录**
+## 创建文件
 
 ```bash
 mkdir wireguard && cd wireguard
@@ -16,7 +14,7 @@ wireguard
     └── start.sh
 ```
 
-**编写 Dockerfile**
+**Dockerfile**
 
 ```dockerfile
 FROM alpine:latest
@@ -33,7 +31,7 @@ RUN chmod +x /app/start.sh
 LABEL description="WireGuard VPN Server"
 ```
 
-**编写 docker-compose.yml**
+**docker-compose.yml**
 
 ```yml
 name: wireguard
@@ -55,7 +53,7 @@ services:
         command: /app/start.sh
 ```
 
-**编写 scripts/start.sh**
+**scripts/start.sh**
 
 ```bash
 #!/bin/bash
@@ -72,7 +70,7 @@ while :; do
 done
 ```
 
-**启动服务**
+## 启动服务
 
 ```bash
 docker compose up --build
