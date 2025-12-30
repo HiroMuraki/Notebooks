@@ -19,7 +19,7 @@ wireguard
 **编写 Dockerfile**
 
 ```dockerfile
-FROM docker.1ms.run/alpine:latest
+FROM alpine:latest
 
 RUN apk add --no-cache \
     iproute2 \
