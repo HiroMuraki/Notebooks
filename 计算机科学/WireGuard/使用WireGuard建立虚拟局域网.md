@@ -23,7 +23,7 @@
 使用如下命令在 Ubuntu 中安装 WireGuard
 
 ```bash
-sudo apt install wireguard
+sudo apt update && sudo apt install wireguard-tools
 ```
 
 为了方便管理，我们在用户目录下创建一个 wireguard 文件夹，并切换到该文件夹，将其作为工作文件夹（如无特殊说明，之后的操作均在此目录中进行）
@@ -91,6 +91,8 @@ sudo sysctl -p
 # 如果使用的是ufw
 sudo ufw allow 51820/udp
 ```
+
+> 注：云服务器的防火墙通常需要通过供应商提供的控制面板调整
 
 ### 2.2.客户端
 

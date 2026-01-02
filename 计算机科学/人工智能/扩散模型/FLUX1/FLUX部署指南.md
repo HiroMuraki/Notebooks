@@ -81,6 +81,7 @@ flowchart TD
 下图给出了 FLUX 与其他图像生成模型的对比，数据来自黑森林实验室官网
 
 ![img](./assets/flux_comparison_1.png)
+
 ![img](./assets/flux_comparison_2.png)
 
 ## 2.部署前的准备
@@ -109,7 +110,9 @@ flowchart TD
 ## 3.正式部署
 
 本指南将介绍两种部署方案：
+
 **方案 A**：FLUX + ComfyUI 部署（推荐），通过图形化节点控制工作流
+
 **方案 B**：FLUX + diffusers 部署，通过代码控制工作流
 
 本指南将重点介绍 FLUX + ComfyUI 的部署方式，FLUX + diffusers 仅做简单介绍。若要使用 diffusers 创建工作流时可参考 ComfyUI 版中给出的工作流进行创建。
@@ -140,10 +143,12 @@ flowchart TD
     注：也可在[Anaconda 官网下载页面](https://www.anaconda.com/download/success)中的 Miniconda Installers 一栏下载用于 Linux 系统的 shell 安装脚本 Miniconda Installers（Linux -> 64-Bit (x86) Installer）
 
 2. 在 shell 中执行以下命令以运行安装脚本
+
     ```bash
     chmod +x ./Miniconda3-latest-Linux-x86_64.sh
     ./Miniconda3-latest-Linux-x86_64.sh
     ```
+
     这将启动一个命令行的交互式安装界面，请结合自身实际情况调整安装选项以安装。
 
 #### 3.1.2.创建虚拟环境
@@ -292,6 +297,7 @@ python main.py
 | sigclip_vision_patch14_384.safetensorss | ComfyUI/models/clip_vision  | https://huggingface.co/Comfy-Org/sigclip_vision_384/blob/main/sigclip_vision_patch14_384.safetensors |
 
 放置后刷新 ComfyUI 页面，在空白处根据下图创建 Redux 子工作流
+
 ![img](./assets/comfyui_flux_redux_sub_workflow.png)
 
 按以下步骤将 Redux 子工作流连接到 FLUX Dev 工作流
@@ -300,11 +306,13 @@ python main.py
 2. 将 Redux 子工作流中的 `App Style Model` 节点的 CONDITIONING 输出口连接到 FLUX Dev 工作流的 `BasicGuider` 的 conditioning 输入口
 
 如下图所示（局部）
+
 ![img](./assets/comfyui_flux_redux_connect_to_main_workflow.png)
 
 通过在 Load Image 节点中选择原始图片并配合提示词即可进行图生图。
 
 可以创建多个 Redux 子工作流并将其串联起来以使工作流同时参考多个模型，如下图
+
 ![img](./assets/comfyui_flux_use_multiply_redux_example.png)
 
 #### 3.2.6.附加：使用 FLUX Kontext Dev 模型创建图生图工作流
@@ -332,6 +340,7 @@ python main.py
 ![img](./assets/comfyui_flux_kontext_workflow_example.png)
 
 注 1：此方法创建的工作流附带注释说明
+
 注 2：工作流中使用的示例输入图为下图
 
 ![img](./assets/flux_kontext_sample_input.jpg)
