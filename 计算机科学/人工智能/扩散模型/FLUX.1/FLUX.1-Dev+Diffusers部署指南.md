@@ -1,4 +1,6 @@
-## 1.环境准备
+[TOC]
+
+## 1 环境准备
 
 **安装 Miniconda**
 
@@ -12,7 +14,7 @@ conda create -n flux_diffusers python=3.13 -y
 conda activate flux_diffusers
 ```
 
-## 2.安装 diffusers 与相关依赖
+## 2 安装 diffusers 与相关依赖
 
 ```bash
 pip install torch
@@ -25,7 +27,7 @@ pip install sentencepiece
 pip install peft
 ```
 
-## 3.下载 FLUX.1-Dev 模型
+## 3 下载 FLUX.1-Dev 模型
 
 使用如下命令拉取 FLUX.1-DEV 模型
 
@@ -36,7 +38,7 @@ hf download black-forest-labs/FLUX.1-Fill-dev --local-dir ./flux-dev-model
 并非仓库内的所有文件都需要拉取，实际所需的文件树如下
 
 ```bash
-/home/user/local/share/ai_models/flux1-dev
+flux.1-dev
 ├── scheduler
 │  └── scheduler_config.json
 ├── text_encoder
@@ -85,9 +87,9 @@ export HF_ENDPOINT=https://hf-mirror.com
 hf auth login
 ```
 
-## 4.创建运行脚本
+## 4 创建运行脚本
 
-main\.py
+**main.py**
 
 ```python
 import torch

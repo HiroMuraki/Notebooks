@@ -80,9 +80,9 @@ flowchart TD
 
 下图给出了 FLUX 与其他图像生成模型的对比，数据来自黑森林实验室官网
 
-![img](./assets/flux_comparison_1.png)
+![img](./asset/flux_comparison_1.png)
 
-![img](./assets/flux_comparison_2.png)
+![img](./asset/flux_comparison_2.png)
 
 ## 2.部署前的准备
 
@@ -105,7 +105,7 @@ flowchart TD
 1. 可安装与使用 miniconda
 2. 可以稳定访问 GitHub 与 Hugging Face 的互联网连接（或可选择镜像站）
 3. 一个有效的 Hugging Face 账号，需要访问 FLUX 的仓库并获取访问授权。此外还并创建一个 AccessToken 以供后续使用。创建 AccessToken 时请勾选“Read access to contents of all public gated repos you can access”权限
-   ![img](./assets/huggingface_access_token_required_permissions.png)
+   ![img](./asset/huggingface_access_token_required_permissions.png)
 
 ## 3.正式部署
 
@@ -236,23 +236,23 @@ python main.py
 
 访问 https://comfyanonymous.github.io/ComfyUI_examples/flux/ ，进入 ComfyUI 官方给出的示例页面，将 Flux Dev 的示例图像（如下）保存到本地
 
-![img](./assets/flux_dev_example.png)
+![img](./asset/flux_dev_example.png)
 
 然后拖拽到 ComfyUI 中即可自动生成 FLUX DEV 的标准工作流，如下图
 
-![img](./assets/comfyui_flux_dev_example_workflow.png)
+![img](./asset/comfyui_flux_dev_example_workflow.png)
 
 点击 ComfyUI 界面下方的蓝色运行按钮即可开始执行图像生成，生成图像所需的时间受硬件条件等因素影响。后续可以通过调整节点与参数尝试生成不同的图片。
 
 **(2) 方案 2：参考下图自行创建工作流**
 
-![img](./assets/comfyui_flux_full_workflow.png)
+![img](./asset/comfyui_flux_full_workflow.png)
 
 **(3) 方案 3：使用工作流的 JSON 文件导入**
 
 指南末尾的附件提供了示例工作流的 JSON 文件，将其拖拽到 ComfyUI 界面即可自动载入。也可以使用 ComfyUI 的打开（Open）功能进行载入
 
-![img](./assets/comfyui_menu_open_workflow.png)
+![img](./asset/comfyui_menu_open_workflow.png)
 
 #### 3.2.4.附加：为工作流添加 LoRA 微调
 
@@ -268,7 +268,7 @@ python main.py
 
 刷新 ComfyUI 网页以使其加载放入的 LoRA 文件，然后在工作流中添加名为“LoraLoaderModelOnly”的节点，并选择需要使用的 LoRA
 
-![img](./assets/comfyui_loraloadermodelonly_node.png)
+![img](./asset/comfyui_loraloadermodelonly_node.png)
 
 接下来按以下步骤调整节点
 
@@ -277,11 +277,11 @@ python main.py
 
 调整后的示例图如下（局部）
 
-![img](./assets/comfyui_flux_and_lora_workflow.png)
+![img](./asset/comfyui_flux_and_lora_workflow.png)
 
 注：如需使用多个 LoRA，则将 LoRA 之间串联即可，如下图
 
-![img](./assets/comfyui_flux_use_multiply_lora_example.png)
+![img](./asset/comfyui_flux_use_multiply_lora_example.png)
 
 此时执行工作流便可查看 FLUX 加上指定 LoRA 后的效果。
 
@@ -298,7 +298,7 @@ python main.py
 
 放置后刷新 ComfyUI 页面，在空白处根据下图创建 Redux 子工作流
 
-![img](./assets/comfyui_flux_redux_sub_workflow.png)
+![img](./asset/comfyui_flux_redux_sub_workflow.png)
 
 按以下步骤将 Redux 子工作流连接到 FLUX Dev 工作流
 
@@ -307,13 +307,13 @@ python main.py
 
 如下图所示（局部）
 
-![img](./assets/comfyui_flux_redux_connect_to_main_workflow.png)
+![img](./asset/comfyui_flux_redux_connect_to_main_workflow.png)
 
 通过在 Load Image 节点中选择原始图片并配合提示词即可进行图生图。
 
 可以创建多个 Redux 子工作流并将其串联起来以使工作流同时参考多个模型，如下图
 
-![img](./assets/comfyui_flux_use_multiply_redux_example.png)
+![img](./asset/comfyui_flux_use_multiply_redux_example.png)
 
 #### 3.2.6.附加：使用 FLUX Kontext Dev 模型创建图生图工作流
 
@@ -333,21 +333,21 @@ python main.py
 
 将以下图片的原图拖入 ComfyUI 界面以自动创建工作流
 
-![img](./assets/flux_1_kontext_dev_basic.png)
+![img](./asset/flux_1_kontext_dev_basic.png)
 
 创建后的工作流如下图所示
 
-![img](./assets/comfyui_flux_kontext_workflow_example.png)
+![img](./asset/comfyui_flux_kontext_workflow_example.png)
 
 注 1：此方法创建的工作流附带注释说明
 
 注 2：工作流中使用的示例输入图为下图
 
-![img](./assets/flux_kontext_sample_input.jpg)
+![img](./asset/flux_kontext_sample_input.jpg)
 
 **(2) 方案 2：参考下图自行创建工作流**
 
-![img](./assets/comfyui_flux_kontext_workflow_simplified_example.png)
+![img](./asset/comfyui_flux_kontext_workflow_simplified_example.png)
 
 **(3) 方案 3：使用工作流的 JSON 文件导入**
 
@@ -447,7 +447,7 @@ def create_flux_pipe() -> FluxPipeline:
 hf auth login
 ```
 
-![img](./assets/huggingface_cli_set_access_token.png)
+![img](./asset/huggingface_cli_set_access_token.png)
 
 ## 4.相关链接
 

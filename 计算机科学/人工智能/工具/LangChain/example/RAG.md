@@ -1,8 +1,8 @@
 [TOC]
 
-## 通用部分
+## 1 通用部分
 
-### 文件清单
+### 1.1 文件清单
 
 ```bash
 ./main.py
@@ -15,7 +15,7 @@ sample.txt
 哈基米的哈基是那没录多，那没录多是一个固定词组，没有特定含义，具体含义视具体而定
 ```
 
-### 前置代码
+### 1.2 前置代码
 
 ```python
 from langchain_core.embeddings import Embeddings
@@ -61,9 +61,9 @@ chat_model = create_chat_model()
 prompt = create_chat_prompt_template()
 ```
 
-### 组件构建
+### 1.3 组件构建
 
-#### 嵌入模型
+#### 1.3.1 嵌入模型
 
 **BAAI/bge-smal-zh-v1.5**
 
@@ -84,7 +84,7 @@ def create_embeddings() -> Embeddings:
 3. BAAI/bge-small-en-v1.5
 4. nomic-ai/nomic-embed-text-v1
 
-#### 文本加载器
+#### 1.3.2 文本加载器
 
 **TextLoader**
 
@@ -114,7 +114,7 @@ def create_text_loader(file_path: str) -> BaseLoader:
 3. PyPDFLoader
 4. NotebookLoader
 
-#### 文本切分器
+#### 1.3.3 文本切分器
 
 **RecursiveCharacterTextSplitter**
 
@@ -131,7 +131,7 @@ def create_text_splitter() -> TextSplitter:
 3. MarkdownHeaderTextSplitter
 4. TextSplitter
 
-#### 向量存储库
+#### 1.3.4 向量存储库
 
 **内存存储**
 
@@ -157,7 +157,7 @@ def create_vector_store(embeddings: Embeddings) -> VectorStore:
     )
 ```
 
-#### 聊天模型
+#### 1.3.5 聊天模型
 
 **Ollama**
 
@@ -193,7 +193,7 @@ def create_chat_model() -> BaseChatModel:
     )
 ```
 
-#### 提示词模板
+#### 1.3.6 提示词模板
 
 ```python
 def create_chat_prompt_template() -> ChatPromptTemplate:
@@ -209,9 +209,9 @@ def create_chat_prompt_template() -> ChatPromptTemplate:
     )
 ```
 
-## 通过 LCEL 构建
+## 2 通过 LCEL 构建
 
-### 简单响应
+### 2.1 简单响应
 
 ```python
 rag_chain = (
@@ -228,7 +228,7 @@ for chunk in rag_chain.stream("哈基米的哈基是什么？"):
     print(chunk, end="", flush=True)
 ```
 
-### 带独立上下文的响应
+### 2.2 带独立上下文的响应
 
 ```python
 from langchain_core.documents.base import Document
@@ -268,9 +268,9 @@ for chunk in chain.stream({"input": "哈基米的哈基是什么？"}):
             print(chunk["answer"], end="", flush=True)
 ```
 
-## 通过 Agent 构建
+## 3 通过 Agent 构建
 
-### 使用 Agent 工具构建
+### 3.1 使用 Agent 工具构建
 
 ```python
 from langchain.tools import tool
@@ -310,7 +310,7 @@ for event in response:
     event["messages"][-1].pretty_print()
 ```
 
-### 使用动态提示词构建
+### 3.2 使用动态提示词构建
 
 ```python
 from langchain.agents import create_agent
@@ -351,7 +351,7 @@ for event in response:
     event["messages"][-1].pretty_print()
 ```
 
-### 使用中间件构建
+### 3.3 使用中间件构建
 
 ```python
 from typing import Any

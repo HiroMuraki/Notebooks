@@ -1,6 +1,6 @@
-# FluxGym 部署指南
+[TOC]
 
-## 1.环境准备
+## 1 环境准备
 
 **安装编译工具**
 
@@ -26,7 +26,7 @@ conda create -n flux_gym python=3.11 -y
 conda activate flux_gym
 ```
 
-## 2.拉取 FluxGym 并安装依赖
+## 2 拉取 FluxGym 并安装依赖
 
 **拉取代码库**
 
@@ -64,7 +64,7 @@ fluxgym/models/clip/clip_l.safetensors
 fluxgym/models/clip/t5xxl_fp16.safetensors
 ```
 
-## 3.启动
+## 3 启动
 
 **配置相关环境变量**
 
