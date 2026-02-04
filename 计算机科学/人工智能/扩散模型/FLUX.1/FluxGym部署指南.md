@@ -31,19 +31,23 @@ conda activate flux_gym
 **拉取代码库**
 
 ```bash
-git clone https://github.com/cocktailpeanut/fluxgym
-cd fluxgym
-git clone -b sd3 https://github.com/kohya-ss/sd-scripts
+git clone --depth=1 https://github.com/cocktailpeanut/fluxgym &&\
+    cd fluxgym &&\
+    git clone --depth=1 -b sd3 https://github.com/kohya-ss/sd-scripts
+```
+**初始化 uv 环境**
+
+```bash
+uv init --python 3.12 &&\
+    cd sd-scripts &&\
+        uv init --python 3.12
 ```
 
 **安装依赖**
 
 ```bash
-cd sd-scripts
-pip install -r requirements.txt
-
-cd ..
-pip install -r requirements.txt
+uv add --dev -r ./requirements.txt &&\
+    uv add -r ../requirements.txt
 
 pip install torch torchvision
 ```

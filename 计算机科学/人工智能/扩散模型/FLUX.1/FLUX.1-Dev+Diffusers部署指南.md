@@ -1,12 +1,14 @@
+# FLUX.1-Dev 部署指南（Diffusers）
+
 [TOC]
 
 ## 1 环境准备
 
-**安装 Miniconda**
+安装 Miniconda：
 
 [Miniconda 安装指南](/计算机科学/miniconda.md)
 
-**创建 Conda 虚拟环境**
+创建 Conda 虚拟环境：
 
 ```bash
 source ~/miniconda/bin/activate
@@ -79,7 +81,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 **注 2**：如果在下载时候遇到了类似如下的报错
 
-> Access to model black-forest-labs/FLUX.1-Redux-dev is restricted and you are not in the authorized list. Visit https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev to ask for access.
+> Access to model black-forest-labs/FLUX.1-Redux-dev is restricted and you are not in the authorized list. Visit <https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev> to ask for access.
 
 这是因为访问 FLUX 的仓库需要授权过的 Hugging Face 账号，你可以使用可访问 FLUX 仓库的 Hugging Face 账号的 AccessToken 来解决此问题。请执行如下命令进入 Hugging Face AccessToken 设置向导，根据向导设置你的 AccessToken
 
@@ -89,7 +91,7 @@ hf auth login
 
 ## 4 创建运行脚本
 
-**main.py**
+`main.py`
 
 ```python
 import torch
