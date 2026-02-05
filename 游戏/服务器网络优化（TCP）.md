@@ -338,13 +338,84 @@ Reverse mode, remote host 10.8.0.100 is sending
 [  5]   0.00-20.01  sec   108 MBytes  45.2 Mbits/sec                  receiver
 ```
 
-**预期结果对比：**
+**预期结果对比**：
 
 | 指标        | 优化前   | 优化后   | 说明                                                                                             |
 | ----------- | -------- | -------- | ------------------------------------------------------------------------------------------------ |
 | 平均带宽    | 4.5 Mbps | 45 Mbps  | 速度提升 10 倍，跑满物理带宽                                                                     |
 | 稳定性      | 极不稳定 | 非常平稳 | 解决卡顿问题的关键                                                                               |
 | Retr (重传) | 50       | ~9000+   | 注意：BBR 模式下高重传是正常的。它代表算法在激进地抵抗物理丢包，只要速度达标，无需理会高重传数。 |
+
+### 5.1. 时序图说明
+
+**优化前**：
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as 客户端 (10.8.0.10)
+    participant R as 中继节点 (Relay)
+    participant S as 服务端 (10.8.0.100)
+
+    Note over C, S: 场景：默认 Cubic 算法 + 默认 MTU (优化前)
+
+    %% 上行阶段
+    C->>R: 发送游戏指令
+    R->>S: 透传加密流量
+    
+    %% 下行阶段 - 重点展示 Cubic 行为
+    rect rgb(255, 240, 240)
+        Note right of S: 🐢 Cubic 算法发送
+        S->>R: 尝试发送数据包 Batch 1
+        R->>C: 转发数据包 1, 2, 3
+        
+        %% 模拟丢包
+        R--xC: ❌ 数据包 4 在物理线路丢失 (0.6% 丢包率)
+        
+        Note right of S: ⚠️ Cubic 判定：<br/>检测到丢包 = 网络严重拥堵！<br/>决 策：立即把发送窗口减半 (乘法减小)
+        
+        S-->>R: (暂停发送，等待超时或ACK)
+        S->>R: 慢速重传包 4... (速度骤降)
+        R->>C: 稀疏的数据流 (4.5Mbps)
+    end
+
+    Note left of C: 结果：地图加载卡住<br/>玩家看到虚空，操作回档
+```
+
+**优化后**：
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as 客户端 (10.8.0.10)
+    participant R as 中继节点 (Relay)
+    participant S as 服务端 (10.8.0.100)
+
+    Note over C, S: 场景：开启 BBR + MTU 1280 优化后
+
+    %% 上行阶段
+    C->>R: 发送游戏指令 (如：破坏方块)
+    R->>S: 透传加密流量 (WireGuard)
+    
+    Note over S: 游戏逻辑处理完成<br/>准备回传区块(Chunk)数据
+
+    %% 下行阶段 - 重点展示 BBR 行为
+    rect rgb(240, 248, 255)
+        Note right of S: 🚀 BBR 算法接管发送
+        S->>R: 满带宽发送数据包 Batch 1
+        R->>C: 转发数据包 1, 2, 3
+        
+        %% 模拟丢包场景
+        R--xC: ❌ 数据包 4 在物理线路丢失 (0.6% 丢包率)
+        
+        Note right of S: ⚡ BBR 判定：<br/>检测到丢包，但带宽模型显示链路未满<br/>决 策：维持大窗口，不降速！
+        
+        S->>R: 立即重传包 4 + 发送新包 5, 6, 7...
+        R->>C: 持续高速数据流 (45Mbps)
+    end
+
+    Note left of C: 结果：虽然有重传 (Retr高)<br/>但数据流未中断，游戏丝滑
+```
 
 ## 6. 总结
 
