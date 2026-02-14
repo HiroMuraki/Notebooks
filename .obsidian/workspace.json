@@ -11,14 +11,10 @@
             "id": "3056ce7697ccedf1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "计算机科学/版本控制/Gitea/使用技巧.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "使用技巧"
+              "title": "新标签页"
             }
           }
         ]
@@ -182,8 +178,16 @@
   },
   "active": "3056ce7697ccedf1",
   "lastOpenFiles": [
-    "计算机科学/版本控制/Gitea/部署指南.md",
+    "计算机科学/证书管理/CA证书管理.md",
+    "计算机科学/版本控制/GitHub/使用指南.md",
+    "计算机科学/证书管理",
+    "计算机科学/版本控制/Gitea/体验优化.md",
     "计算机科学/版本控制/Gitea/使用技巧.md",
+    "计算机科学/版本控制/Gitea/使用指南.md",
+    "计算机科学/版本控制/GitHub",
+    "计算机科学/版本控制/Gitea/部署指南.md",
+    "计算机科学/Linux/CA证书管理.md",
+    "计算机科学/容器技术/Docker/证书问题.md",
     "计算机科学/容器技术/Docker/安装指南.md",
     "未命名 1.base",
     "未命名.base",
@@ -206,18 +210,10 @@
     "计算机科学/Windows/SSH服务配置.md",
     "计算机科学/Anaconda/miniconda.md",
     "计算机科学/硬件/显示屏/参数说明.md",
-    "计算机科学/Git/使用指南.md",
-    "计算机科学/人工智能/扩散模型/FLUX.1/FluxGym部署指南.md",
-    "计算机科学/Steamcmd/使用指南.md",
-    "计算机科学/Linux/用户管理.md",
-    "未命名.md",
-    "计算机科学/人工智能/工具/Ollama/安装指南.md",
     "计算机科学/Steamcmd",
     "计算机科学/FRP",
     "计算机科学/Linux/Tmux",
     "计算机科学/Linux/DotNet",
-    "计算机科学/Termux",
-    "计算机科学/Zsh",
     "未命名.canvas"
   ]
 }
